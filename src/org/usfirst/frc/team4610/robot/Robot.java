@@ -8,36 +8,33 @@
 package org.usfirst.frc.team4610.robot;
 
 import org.usfirst.frc.team4610.robot.subsystems.DriveBase;
-
-import com.ctre.CANTalon;
+import org.usfirst.frc.team4610.robot.subsystems.Intake;
+import org.usfirst.frc.team4610.robot.subsystems.Lift;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-/**
- * The VM is configured to automatically run this class, and to call the
- * functions corresponding to each mode, as described in the TimedRobot
- * documentation. If you change the name of this class or the package after
- * creating this project, you must also update the build.properties file in the
- * project.
- */
+
 public class Robot extends TimedRobot {
 	public static OI m_oi;
-	public static DriveBase drivebase; 
-
+	public static DriveBase drivebase;
+	public static Lift lift;
+	public static Intake intake;
+	Compressor c1=new Compressor();
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
-
 	
 	@Override
 	public void robotInit() {
 		m_oi = new OI();
 		drivebase = new DriveBase();
+		CameraServer.getInstance().startAutomaticCapture();
 	}
 
 	
@@ -87,12 +84,21 @@ public class Robot extends TimedRobot {
 	public void testPeriodic() {
 	}
 	
-	public static void initTalon(TalonSRX motor) {
+	public static void initTalonCoast(TalonSRX motor) {
 		motor.setNeutralMode(NeutralMode.Coast);
 		motor.neutralOutput();
 		motor.setSensorPhase(false);
 		motor.configNominalOutputForward(0.0, 0);
 		motor.configNominalOutputReverse(0.0, 0);
 		motor.configClosedloopRamp(0.5, 0);
+	}
+	
+	public static void initTalonBrake(TalonSRX motor) {
+		motor.setNeutralMode(NeutralMode.Brake);
+		motor.neutralOutput();
+		motor.setSensorPhase(false);
+		motor.configNominalOutputForward(0.0, 0);
+		motor.configNominalOutputReverse(0.0, 0);
+		motor.configClosedloopRamp(0.55, 0);
 	}
 }
