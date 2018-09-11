@@ -14,7 +14,6 @@ import org.usfirst.frc.team4610.robot.commands.LiftBottom;
 import org.usfirst.frc.team4610.robot.commands.LiftScale;
 import org.usfirst.frc.team4610.robot.commands.LiftSwitch;
 import org.usfirst.frc.team4610.robot.commands.LowGear;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

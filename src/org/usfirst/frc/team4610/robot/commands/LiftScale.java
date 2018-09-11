@@ -22,7 +22,7 @@ public class LiftScale extends Command {
 			Robot.lift.set(ControlMode.PercentOutput, -RobotMap.LIFT_SPEED.value);
 		}
 		else if(Robot.lift.LiftMotor.getSelectedSensorPosition(0) < RobotMap.LIFT_SCALE.value ) {
-			Robot.lift.set(ControlMode.PercentOutput, RobotMap.LIFT_SPEED.value);
+			Robot.lift.set(ControlMode.PercentOutput, -RobotMap.LIFT_SPEED.value);
 		}
 		else {
 			Robot.lift.set(ControlMode.PercentOutput, 0);
