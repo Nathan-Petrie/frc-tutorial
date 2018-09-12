@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
 	public static DriveBase drivebase;
 	public static Lift lift;
 	public static Intake intake;
-	Compressor c1=new Compressor();
+	Compressor c1=new Compressor(); 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 	
