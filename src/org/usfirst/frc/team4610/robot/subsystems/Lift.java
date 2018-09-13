@@ -2,7 +2,6 @@ package org.usfirst.frc.team4610.robot.subsystems;
 
 import org.usfirst.frc.team4610.robot.Robot;
 import org.usfirst.frc.team4610.robot.RobotMap;
-
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -14,7 +13,7 @@ public class Lift extends Subsystem {
 	
 	
 	public Lift() {
-		LiftMotor = new TalonSRX(RobotMap.LIFT_MOTOR.value);
+		LiftMotor = new TalonSRX(7);
 		
 		Robot.initTalonBrake(LiftMotor);
 		
@@ -29,7 +28,6 @@ public class Lift extends Subsystem {
 
 	@Override
 	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
 
 	}
 

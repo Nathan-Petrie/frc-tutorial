@@ -9,13 +9,13 @@ package org.usfirst.frc.team4610.robot;
 
 
 public enum RobotMap {
-LEFT_MOTOR(0),
+/*LEFT_MOTOR(0),
 RIGHT_MOTOR(1),
 RIGHT_MOTOR_FOLLOW(3),
 LEFT_MOTOR_FOLLOW(4),
 LIFT_MOTOR(5),
 LEFT_IN_MOTOR(6),
-RIGHT_IN_MOTOR(7),
+RIGHT_IN_MOTOR(7),*/
 LIFT_BOTTOM(-250),
 LIFT_SWITCH(-17000),
 LIFT_SCALE(-79388),
@@ -33,4 +33,5 @@ BACKUP_JOYSTICK(3);
 	RobotMap(int value) {
 		this.value = value;
 	}
+	
 }

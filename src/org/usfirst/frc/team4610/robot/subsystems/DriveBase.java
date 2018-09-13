@@ -15,15 +15,12 @@ public class DriveBase extends Subsystem {
 	private TalonSRX RightMotorFollow;
 	private TalonSRX LeftMotor;
 	private TalonSRX LeftMotorFollow;
-	public DoubleSolenoid Shifter;
-	
 		
 	public DriveBase() {
-		RightMotor = new TalonSRX(RobotMap.RIGHT_MOTOR.value); 
-		LeftMotor = new TalonSRX(RobotMap.LEFT_MOTOR.value);
-		RightMotorFollow = new TalonSRX(RobotMap.RIGHT_MOTOR_FOLLOW.value); 
-		LeftMotorFollow = new TalonSRX(RobotMap.LEFT_MOTOR_FOLLOW.value);
-		Shifter = new DoubleSolenoid(RobotMap.SHIFTER_PORT1.value, RobotMap.SHIFTER_PORT2.value);
+		RightMotor = new TalonSRX(1); 
+		LeftMotor = new TalonSRX(3);
+		RightMotorFollow = new TalonSRX(2); 
+		LeftMotorFollow = new TalonSRX(4);
 		Robot.initTalonBrake(LeftMotor);
 		Robot.initTalonBrake(RightMotor);
 		Robot.initTalonBrake(LeftMotorFollow);
@@ -37,9 +34,7 @@ public class DriveBase extends Subsystem {
 		LeftMotor.set(mode, leftvalue);
 		RightMotor.set(mode, rightvalue);
 	}
-	public void position(Value value) {
-		Shifter.set(value);
-	}
+	
 	
 	@Override
 	protected void initDefaultCommand() {

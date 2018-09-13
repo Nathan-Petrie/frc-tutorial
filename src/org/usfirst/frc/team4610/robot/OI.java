@@ -7,13 +7,13 @@
 
 package org.usfirst.frc.team4610.robot;
 
-import org.usfirst.frc.team4610.robot.commands.HighGear;
+//import org.usfirst.frc.team4610.robot.commands.HighGear;
 import org.usfirst.frc.team4610.robot.commands.IntakeIn;
 import org.usfirst.frc.team4610.robot.commands.IntakeOut;
 import org.usfirst.frc.team4610.robot.commands.LiftBottom;
 import org.usfirst.frc.team4610.robot.commands.LiftScale;
 import org.usfirst.frc.team4610.robot.commands.LiftSwitch;
-import org.usfirst.frc.team4610.robot.commands.LowGear;
+//import org.usfirst.frc.team4610.robot.commands.LowGear;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -21,11 +21,11 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 	
 	public static final double JOY_DEADZONE = .05; 
-	public final Joystick LEFT_JOY = new Joystick(RobotMap.LEFT_JOYSTICK.value);
-	public final Joystick RIGHT_JOY = new Joystick(RobotMap.RIGHT_JOYSTICK.value);
-	public final Joystick BACKUP_JOY = new Joystick(RobotMap.BACKUP_JOYSTICK.value);
-	Button button1 = new JoystickButton(LEFT_JOY, 1),
-			button2 = new JoystickButton(LEFT_JOY, 2),
+	public  Joystick LEFT_JOY = new Joystick(1);
+	public  Joystick RIGHT_JOY = new Joystick(2);
+	public  Joystick BACKUP_JOY = new Joystick(3);
+	Button button1 = new JoystickButton(LEFT_JOY, 1);
+			/*button2 = new JoystickButton(LEFT_JOY, 2),
 			button3 = new JoystickButton(LEFT_JOY, 3),
 			button4 = new JoystickButton(LEFT_JOY, 4),
 			button5 = new JoystickButton(LEFT_JOY, 5),
@@ -47,7 +47,9 @@ public class OI {
 			button05 = new JoystickButton(BACKUP_JOY, 5),
 			button06 = new JoystickButton(BACKUP_JOY, 6),
 			button07 = new JoystickButton(BACKUP_JOY, 7),
-			button08 = new JoystickButton(BACKUP_JOY, 8);
+			button08 = new JoystickButton(BACKUP_JOY, 8),
+			button09 = new JoystickButton(BACKUP_JOY, 9),
+			button011 = new JoystickButton(BACKUP_JOY, 11);*/
 	
 	public double getLeftJoyX() {
 		double raw = LEFT_JOY.getX();
@@ -71,13 +73,13 @@ public class OI {
 	}
 	
 	public OI() {
-		button01.whenPressed(new LiftBottom());
-		button13.whenPressed(new HighGear());
-		button4.whenPressed(new LowGear());
-		button3.whileHeld(new IntakeIn());
-		button14.whileHeld(new IntakeOut());
-		button02.whenPressed(new LiftSwitch());
-		button03.whenPressed(new LiftScale());
+		//button011.whenPressed(new LiftBottom());
+		//button13.whenPressed(new HighGear());
+		//button4.whenPressed(new LowGear());
+		//button1.whileHeld(new IntakeIn());
+		//button14.whileHeld(new IntakeOut());
+		//button09.whenPressed(new LiftSwitch());
+		//button07.whenPressed(new LiftScale());
 		
 	}
 	

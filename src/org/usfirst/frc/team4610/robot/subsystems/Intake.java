@@ -16,8 +16,8 @@ public class Intake extends Subsystem {
 	
 	
 	public Intake() {
-		LeftInMotor = new TalonSRX(RobotMap.LEFT_IN_MOTOR.value);
-		RightInMotor = new TalonSRX(RobotMap.RIGHT_IN_MOTOR.value);
+		LeftInMotor = new TalonSRX(5);
+		RightInMotor = new TalonSRX(6);
 		Robot.initTalonCoast(LeftInMotor);
 		Robot.initTalonCoast(RightInMotor);
 		
@@ -37,3 +37,4 @@ public class Intake extends Subsystem {
 	}
 
 }
+

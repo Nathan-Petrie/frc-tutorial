@@ -16,11 +16,11 @@ public class TankDrive extends Command {
 		
 	}
 	
-	public void exicute() {
-		double throttle = ( 1.0 -Robot.m_oi.LEFT_JOY.getThrottle()) / -2.0;
+	public void execute() {
+		//double throttle = ( 1.0 -Robot.m_oi.LEFT_JOY.getThrottle()) / -2.0;
 		
-		Robot.drivebase.set(ControlMode.PercentOutput, Robot.m_oi.getLeftJoyY() * throttle, 
-				Robot.m_oi.getRgihtJoyY() * throttle);
+		Robot.drivebase.set(ControlMode.PercentOutput, -Robot.m_oi.LEFT_JOY.getRawAxis(1), 
+				Robot.m_oi.RIGHT_JOY.getRawAxis(1));
 	}
 	
 	

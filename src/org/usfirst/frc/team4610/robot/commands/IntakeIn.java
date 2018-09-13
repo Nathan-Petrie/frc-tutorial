@@ -11,20 +11,22 @@ public class IntakeIn extends Command {
 
 	public IntakeIn(){
 		requires(Robot.intake);
-	}
-	
-	public void initialize(){
 		
 	}
 	
-	public void exicute() {
-		Robot.intake.set(ControlMode.PercentOutput, RobotMap.INTAKE_SPEED.value);
+	public void initialize(){
+		setTimeout(1); 
+		
+	}
+	
+	public void execute() {
+		Robot.intake.set(ControlMode.PercentOutput, 100);
 	}
 	
 	
 	protected boolean isFinished() {
 
-		return false;
+		return true;
 	}
 	
 	protected void interupted() {
