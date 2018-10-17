@@ -1,31 +1,31 @@
 package org.usfirst.frc.team4610.robot.commands;
 
 import org.usfirst.frc.team4610.robot.Robot;
+import org.usfirst.frc.team4610.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class TankDrive extends Command {
-	
-	public TankDrive(){
-		requires(Robot.drivebase);
+public class HighGear extends Command {
+
+	public HighGear(){
+		requires(Robot.pnumatics);
 	}
 	
 	public void initialize(){
-		
+		setTimeout(.1);
 	}
 	
 	public void execute() {
-		double throttle = ( 1.0 -Robot.m_oi.LEFT_JOY.getThrottle()) / -2.0;
-		
-		Robot.drivebase.set(ControlMode.PercentOutput, -Robot.m_oi.getLeftJoyX() * throttle, 
-				Robot.m_oi.getRightJoyX() * throttle);
+		Robot.pnumatics.shift(Value.kForward);
 	}
 	
 	
 	protected boolean isFinished() {
-
+		isTimedOut();
 		return false;
 	}
 	

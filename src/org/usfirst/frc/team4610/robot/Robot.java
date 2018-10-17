@@ -12,6 +12,8 @@ import org.usfirst.frc.team4610.robot.commands.TankDrive;
 import org.usfirst.frc.team4610.robot.subsystems.DriveBase;
 import org.usfirst.frc.team4610.robot.subsystems.Intake;
 import org.usfirst.frc.team4610.robot.subsystems.Lift;
+import org.usfirst.frc.team4610.robot.subsystems.Pnumatics;
+
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
@@ -26,6 +28,7 @@ public class Robot extends TimedRobot {
 	public static OI m_oi;
 	public static DriveBase drivebase;
 	public static Lift lift;
+	public static Pnumatics pnumatics;
 	public static Intake intake;
 	Compressor c1=new Compressor(); 
 	Command m_autonomousCommand;
@@ -39,6 +42,7 @@ public class Robot extends TimedRobot {
 		drivebase = new DriveBase();
 		lift = new Lift();
 		intake = new Intake();
+		pnumatics = new Pnumatics();
 		tankDrive = new TankDrive();
 		intakeIn = new IntakeIn();
 		CameraServer.getInstance().startAutomaticCapture();
@@ -74,7 +78,7 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		tankDrive.start();
+		//tankDrive.start();
 		
 		if (m_autonomousCommand != null) {
 			m_autonomousCommand.cancel();

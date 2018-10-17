@@ -29,6 +29,22 @@ public class Intake extends Subsystem {
 		RightInMotor.set(mode, -intakevalue);
 		
 	}
+	
+	public void stop() {
+		LeftInMotor.set(ControlMode.PercentOutput, 0);
+		RightInMotor.set(ControlMode.PercentOutput, 0);
+		
+	}
+	public void in() {
+		LeftInMotor.set(ControlMode.PercentOutput, 75);
+		RightInMotor.set(ControlMode.PercentOutput, -75);
+		
+	}
+	public void out() {
+		LeftInMotor.set(ControlMode.PercentOutput, -75);
+		RightInMotor.set(ControlMode.PercentOutput, 75);
+		
+	}
 
 	@Override
 	protected void initDefaultCommand() {
